@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Example testing indeterminate HTML checkboxes using Cypress",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "cypress run"
   },

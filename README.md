@@ -1,6 +1,10 @@
 # indeterminate-checkboxes
 > Example testing indeterminate HTML checkboxes using Cypress
 
+![Test in action](./images/demo.gif)
+
+See [spec.js](./cypress/integration/spec.js)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2021

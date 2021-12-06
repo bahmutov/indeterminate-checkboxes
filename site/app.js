@@ -17,27 +17,30 @@ addEventListener('change', (e) => {
   const children = nodeArray('input', check.parentNode)
   children.forEach((child) => (child.checked = check.checked))
 
-  //  traverse up from target check
-  while (check) {
-    //  find parent and sibling checkboxes (quick'n'dirty)
-    const parent = check.closest(['ul']).parentNode.querySelector('input')
-    const siblings = nodeArray(
-      'input',
-      parent.closest('li').querySelector(['ul']),
-    )
+  // introduce random async delay in setting the parent status
+  setTimeout(() => {
+    //  traverse up from target check
+    while (check) {
+      //  find parent and sibling checkboxes (quick'n'dirty)
+      const parent = check.closest(['ul']).parentNode.querySelector('input')
+      const siblings = nodeArray(
+        'input',
+        parent.closest('li').querySelector(['ul']),
+      )
 
-    //  get checked state of siblings
-    //  are every or some siblings checked (using Boolean as test function)
-    const checkStatus = siblings.map((check) => check.checked)
-    const every = checkStatus.every(Boolean)
-    const some = checkStatus.some(Boolean)
+      //  get checked state of siblings
+      //  are every or some siblings checked (using Boolean as test function)
+      const checkStatus = siblings.map((check) => check.checked)
+      const every = checkStatus.every(Boolean)
+      const some = checkStatus.some(Boolean)
 
-    //  check parent if all siblings are checked
-    //  set indeterminate if not all and not none are checked
-    parent.checked = every
-    parent.indeterminate = !every && every !== some
+      //  check parent if all siblings are checked
+      //  set indeterminate if not all and not none are checked
+      parent.checked = every
+      parent.indeterminate = !every && every !== some
 
-    //  prepare for nex loop
-    check = check != parent ? parent : 0
-  }
+      //  prepare for nex loop
+      check = check != parent ? parent : 0
+    }
+  }, Math.random() * 1000 + 1000)
 })
