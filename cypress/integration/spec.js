@@ -34,4 +34,10 @@ it('checks out', () => {
   cy.get('#buildings').should('be.checked')
   cy.get('#two-sandwiches').should('be.checked')
   cy.get('#tall').should('have.prop', 'indeterminate', true)
+
+  // "be.checked" is really checking the DOM element property "checked"
+  cy.get('#buildings')
+    .should('be.checked')
+    // equivalent
+    .and('have.prop', 'checked', true)
 })
