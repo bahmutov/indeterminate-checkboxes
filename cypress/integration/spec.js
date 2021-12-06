@@ -41,3 +41,38 @@ it('checks out', () => {
     // equivalent
     .and('have.prop', 'checked', true)
 })
+
+it('can be unchecked', () => {
+  cy.visit('site/index.html')
+  // at first nothing is checked
+  cy.get('#tall').should('not.be.checked')
+  cy.get('#buildings').check().should('be.checked')
+  // how to check the status of the parent indeterminate checkbox?
+  cy.get('#tall')
+    .should('have.prop', 'indeterminate', true)
+    // one second delay for better visual feedback
+    .wait(1000)
+
+  // 🚨 DOES NOT WORK
+  // we cannot remove "indeterminate" prop using the standard ".uncheck()" method
+  // cy.get('#tall').uncheck()
+  // ✅ remove the prop by calling jQuery prop('indeterminate', false)
+  cy.get('#tall').invoke('prop', 'indeterminate', false)
+})
+
+it('app flips it from indeterminate to checked', () => {
+  cy.visit('site/index.html')
+  // at first nothing is checked
+  cy.get('#tall')
+    .should('not.be.checked')
+    .and('have.prop', 'indeterminate', false)
+
+  // set a couple of children boxes to checked
+  cy.get('#buildings').check()
+  cy.get('#giants').check()
+  cy.get('#tall').should('have.prop', 'indeterminate', true)
+
+  // set the rest of the children boxes
+  cy.get('#two-sandwiches').check()
+  cy.get('#tall').should('have.prop', 'indeterminate', false).and('be.checked')
+})
