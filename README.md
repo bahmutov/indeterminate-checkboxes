@@ -5,7 +5,7 @@
 
 See [spec.js](./cypress/integration/spec.js)
 
-Read [Indeterminate Checkboxes](https://css-tricks.com/indeterminate-checkboxes/)
+Read "Indeterminate Checkboxes" [blog post](https://css-tricks.com/indeterminate-checkboxes/) and watch the [video](https://youtu.be/QHGhp9yG4uw).
 
 ## Small print
 
