@@ -1,4 +1,4 @@
-# indeterminate-checkboxes [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.6.0-brightgreen) [![ci](https://github.com/bahmutov/indeterminate-checkboxes/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/bahmutov/indeterminate-checkboxes/actions/workflows/ci.yml)
+# indeterminate-checkboxes [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.6.1-brightgreen) [![ci](https://github.com/bahmutov/indeterminate-checkboxes/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/bahmutov/indeterminate-checkboxes/actions/workflows/ci.yml)
 > Example testing indeterminate HTML checkboxes using Cypress
 
 ![Test in action](./images/demo.gif)
