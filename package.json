@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/bahmutov/indeterminate-checkboxes#readme",
   "devDependencies": {
-    "cypress": "9.7.0",
+    "cypress": "16.3.0",
     "prettier": "3.10.1"
   }
 }
